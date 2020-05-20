@@ -1,0 +1,39 @@
+
+# Introduction
+
+This is a mock documentation based on Playtomic Backend\''s.
+
+<aside class="notice">
+Sorry in advance for the typos!
+</aside>
+
+##Endpoint conventions
+
+All services share a common philosophy: 
+
+1. All endpoints follow REST-principles. For an entity, the operations will be POST to create (not repeatable), PUT and PATCH to alter (repeatable),
+ GET to filter entities, a simple GET by the identifier of the entity, DELETE by identifier. 
+For example, for a user, there will be endpoints GET /v2/users, GET PUT PATCH DELETE /v2/users/{user_id}. 
+2. Endpoints are nouns and not verbs. 
+3. More complex endpoints depend on the service implementation, but they try to follow the principles above. 
+4. Not all verbs are implemented for every entity, it depends on the needs of the product, but when adding new endpoints, they follow these principles.
+5. All endpoints must declare explicit parameters. No parameter must be derived from the authenticated user. 
+For instance, if the `user_id` is important for the request, it must be specified as a param. 
+The main reason is that security is simpler to implement, and it allows to make calls in behalf of a different user.
+6. Same endpoints for different roles. It simplifies the logic, allows us to reuse functionality. On the contrary,
+it makes security a bit more complex.
+
+<aside class="notice">
+There are exceptions to these rules due to legacy systems, but all new endpoints follow them.
+</aside>
+
+##Pagination
+Not all endpoints support pagination. When they do, they support the parameters `?page={page_index}&size={page_size}`. 
+Page indexes start at 0. 
+
+As we chose to return lists in GET endpoints, the total number of possible results has to be returned in a header.
+That header is `total`.
+
+<aside class="notice">
+We have detected an incorrect number of results in `total`. It will be fixed as soon as possible.
+</aside>
