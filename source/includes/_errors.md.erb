@@ -1,0 +1,33 @@
+# Errors
+
+Anemone endpoints response a custom body when an error is returned.
+It contains a JSON body with the following fields:
+
+* `status`: An error code, dependant of the service, with further explanation of the error.
+* `localized_message`: A message localized in the locale of the user describing the error.
+
+`localized_message` was added to allow clients to give users more feedback when they
+can't handle the `status` field. This field is current deprecated or always return in English.
+The reason is that keeping localization in backend makes it more complicated, forces us
+to make deploys just for localization. Every time a language is added we have to re-deploy
+all services.
+
+```
+{
+    "status": "DUPLICATED_EMAIL",
+    "localized_message": "This email is already in use. Please choose a different one."
+}
+```
+
+Anemone API uses the standard HTTP error codes:
+
+
+Error Code | Meaning
+---------- | -------
+400 | Bad Request -- Your request is invalid.
+401 | Unauthorized -- Your API key is wrong.
+403 | Forbidden -- Your token does not have permission to do that operation.
+404 | Not Found -- The specified resource could not be found.
+405 | Method Not Allowed -- You tried to access a resiurce with an invalid method.
+500 | Internal Server Error -- We had a problem with our server. Try again later.
+503 | Service Unavailable -- We're temporarily offline for maintenance or deployment. Please try again later.

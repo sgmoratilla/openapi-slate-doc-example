@@ -1,0 +1,30 @@
+# Adapted from https://github.com/Decathlon/slate-builder-action
+name: Deploy Slate Documentation
+on:
+  push:
+    branches: [master] 
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
+    - name: Install Gems
+      run: bundle install
+    - name: Install Widdershins
+      run: docker build widdershins -t widdershins
+    - name: Convert OpenAPI Docs
+      run: |
+        mkdir ./source/includes/generated-sources/
+        chmod 755 ./source/includes/generated-sources/
+        sudo sh ./convert-openapi.sh
+    - name: Build Slate
+      run: bundle exec middleman build --verbose
+    - name: Deploy to GitHub Pages
+      uses: syltek/deploy-github-pages-action@v0.3.0
+      env:
+        GH_PAT: ${{ secrets.GH_PAT }}
+        BUILD_DIR: build/

@@ -1,0 +1,16 @@
+{{= data.tags.section }}
+<h3 id="{{=data.operationUniqueSlug}}-parameters">Parameters</h3>
+
+{{~ data.parameters :p}}
+**{{=p.name}}**&nbsp;*{{= p.in}}*&nbsp;<small>{{? !p.required}}optional¦{{?}}{{=p.safeType}}{{? p.schema && p.schema.enum }}¦enum{{?}}</small><br/>
+{{ if (p.schema && p.schema.enum) { }}
+*Allowable values:*
+
+{{~ p.schema.enum :e}}
+* {{= e}}
+{{~}}
+{{ } }}
+{{=p.description||''}}
+<p class="separator"></p>
+{{~}}
+{{= data.tags.endSection }}
