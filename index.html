@@ -1,0 +1,670 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-d6d7f332.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-e4b64da2.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#endpoint-conventions" class="toc-h2 toc-link" data-title="Endpoint conventions">Endpoint conventions</a>
+                  </li>
+                  <li>
+                    <a href="#pagination" class="toc-h2 toc-link" data-title="Pagination">Pagination</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#users-service" class="toc-h1 toc-link" data-title="Petstore Service">Petstore Service</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#types-of-pets" class="toc-h2 toc-link" data-title="Types of Pets">Types of Pets</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-pets" class="toc-h2 toc-link" data-title="List all pets">List all pets</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-pet" class="toc-h2 toc-link" data-title="Create a pet">Create a pet</a>
+                  </li>
+                  <li>
+                    <a href="#info-for-a-specific-pet" class="toc-h2 toc-link" data-title="Info for a specific pet">Info for a specific pet</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_Pet" class="toc-h2 toc-link" data-title="Pet">Pet</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_Pets" class="toc-h2 toc-link" data-title="Pets">Pets</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_Error" class="toc-h2 toc-link" data-title="Error">Error</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>This is a mock documentation based on Playtomic Backend\&#39;&#39;s.</p>
+
+<aside class="notice">
+Sorry in advance for the typos!
+</aside>
+<h2 id='endpoint-conventions'>Endpoint conventions</h2>
+<p>All services share a common philosophy: </p>
+
+<ol>
+<li>All endpoints follow REST-principles. For an entity, the operations will be POST to create (not repeatable), PUT and PATCH to alter (repeatable),
+GET to filter entities, a simple GET by the identifier of the entity, DELETE by identifier. 
+For example, for a user, there will be endpoints GET /v2/users, GET PUT PATCH DELETE /v2/users/{user_id}. </li>
+<li>Endpoints are nouns and not verbs. </li>
+<li>More complex endpoints depend on the service implementation, but they try to follow the principles above. </li>
+<li>Not all verbs are implemented for every entity, it depends on the needs of the product, but when adding new endpoints, they follow these principles.</li>
+<li>All endpoints must declare explicit parameters. No parameter must be derived from the authenticated user. 
+For instance, if the <code>user_id</code> is important for the request, it must be specified as a param. 
+The main reason is that security is simpler to implement, and it allows to make calls in behalf of a different user.</li>
+<li>Same endpoints for different roles. It simplifies the logic, allows us to reuse functionality. On the contrary,
+it makes security a bit more complex.</li>
+</ol>
+
+<aside class="notice">
+There are exceptions to these rules due to legacy systems, but all new endpoints follow them.
+</aside>
+<h2 id='pagination'>Pagination</h2>
+<p>Not all endpoints support pagination. When they do, they support the parameters <code>?page={page_index}&amp;size={page_size}</code>. 
+Page indexes start at 0. </p>
+
+<p>As we chose to return lists in GET endpoints, the total number of possible results has to be returned in a header.
+That header is <code>total</code>.</p>
+
+<aside class="notice">
+We have detected an incorrect number of results in `total`. It will be fixed as soon as possible.
+</aside>
+<h1 id="users-service">Petstore Service</h1>
+<h3 id='types-of-pets'>Types of Pets</h3><h4 id='dogs'>Dogs:</h4>
+<p>They are the true friend of man.</p>
+<h4 id='cat'>Cat:</h4>
+<p>Men are the true pet of cats.</p>
+
+<!-- Generator: Widdershins v4.0.1 -->
+
+<!-- sgmoratilla <h1 id="swagger-petstore">Swagger Petstore v1.0.0</h1> -->
+
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
+
+<p>Base URLs:</p>
+
+<ul>
+<li><a href="http://petstore.swagger.io/v1">http://petstore.swagger.io/v1</a></li>
+</ul>
+
+<p>License: MIT</p>
+
+<!-- sgmoratilla: hide authentication, as we have a general section for this -->
+
+<!-- sgmoratilla <h1 id="swagger-petstore-pets">pets</h1>-->
+
+<h2 id='list-all-pets'>List all pets</h2>
+
+<p><a id="opIdlistPets"></a></p>
+
+<blockquote>
+<p>GET /pets</p>
+</blockquote>
+
+<pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl -X GET http://petstore.swagger.io/v1/pets <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span>
+
+</code></pre>
+
+<h3 id="list-all-pets-parameters">Parameters</h3>
+
+<p><strong>limit</strong>&nbsp;<em>query</em>&nbsp;<small>optional¦integer(int32)</small><br/></p>
+
+<p>How many items to return at one time (max 100)
+<p class="separator"></p></p>
+
+<blockquote>
+<p>Example responses</p>
+
+<p>200 Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<h3 id="list-all-pets-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>A paged array of pets</td>
+<td><a href="#schemapets">Pets</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>Default</td>
+<td>unexpected error</td>
+<td><a href="#schemaerror">Error</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='response-headers'>Response Headers</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Header</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>x-next</td>
+<td>string</td>
+<td></td>
+<td>A link to the next page of responses</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h2 id='create-a-pet'>Create a pet</h2>
+
+<p><a id="opIdcreatePets"></a></p>
+
+<blockquote>
+<p>POST /pets</p>
+</blockquote>
+
+<pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl -X POST http://petstore.swagger.io/v1/pets <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span>
+
+</code></pre>
+
+<blockquote>
+<p>Example responses</p>
+
+<p>default Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h3 id="create-a-pet-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>201</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
+<td>Null response</td>
+<td>None</td>
+</tr>
+<tr>
+<td>default</td>
+<td>Default</td>
+<td>unexpected error</td>
+<td><a href="#schemaerror">Error</a></td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h2 id='info-for-a-specific-pet'>Info for a specific pet</h2>
+
+<p><a id="opIdshowPetById"></a></p>
+
+<blockquote>
+<p>GET /pets/{petId}</p>
+</blockquote>
+
+<pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl -X GET http://petstore.swagger.io/v1/pets/<span class="o">{</span>petId<span class="o">}</span> <span class="se">\</span>
+  -H <span class="s1">'Accept: application/json'</span>
+
+</code></pre>
+
+<h3 id="info-for-a-specific-pet-parameters">Parameters</h3>
+
+<p><strong>petId</strong>&nbsp;<em>path</em>&nbsp;<small>string</small><br/></p>
+
+<p>The id of the pet to retrieve
+<p class="separator"></p></p>
+
+<blockquote>
+<p>Example responses</p>
+
+<p>200 Response</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h3 id="info-for-a-specific-pet-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Expected response to a valid request</td>
+<td><a href="#schemapet">Pet</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>Default</td>
+<td>unexpected error</td>
+<td><a href="#schemaerror">Error</a></td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<!-- sgmoratilla ## Schemas -->
+
+<h2 id="tocS_Pet">Pet</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemapet"></a>
+<a id="schema_Pet"></a>
+<a id="tocSpet"></a>
+<a id="tocspet"></a></p>
+
+<p><pre class="highlight plaintext"><code>{
+  &quot;id&quot;: 0,
+  &quot;name&quot;: &quot;string&quot;,
+  &quot;tag&quot;: &quot;string&quot;
+}</p>
+
+<p></code></pre><h3 id='properties'>Properties</h3>
+<p><strong>id</strong>&nbsp;<small>integer(int64)</small><br/></p></p>
+
+<p class="separator"></p>
+
+<p><strong>name</strong>&nbsp;<small>string</small><br/></p>
+
+<p class="separator"></p>
+
+<p><strong>tag</strong>&nbsp;<small>string</small><br/></p>
+
+<p class="separator"></p>
+
+<h2 id="tocS_Pets">Pets</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemapets"></a>
+<a id="schema_Pets"></a>
+<a id="tocSpets"></a>
+<a id="tocspets"></a></p>
+
+<p><pre class="highlight plaintext"><code>[
+  {
+    &quot;id&quot;: 0,
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;tag&quot;: &quot;string&quot;
+  }
+]</p>
+
+<p></code></pre><h3 id='properties-2'>Properties</h3>
+<p><strong><em>anonymous</em></strong>&nbsp;<small>[<a href="#schemapet">Pet</a>]</small><br/></p></p>
+
+<p class="separator"></p>
+
+<h2 id="tocS_Error">Error</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemaerror"></a>
+<a id="schema_Error"></a>
+<a id="tocSerror"></a>
+<a id="tocserror"></a></p>
+
+<p><pre class="highlight plaintext"><code>{
+  &quot;code&quot;: 0,
+  &quot;message&quot;: &quot;string&quot;
+}</p>
+
+<p></code></pre><h3 id='properties-3'>Properties</h3>
+<p><strong>code</strong>&nbsp;<small>integer(int32)</small><br/></p></p>
+
+<p class="separator"></p>
+
+<p><strong>message</strong>&nbsp;<small>string</small><br/></p>
+
+<p class="separator"></p>
+<h1 id='errors'>Errors</h1>
+<p>Anemone endpoints response a custom body when an error is returned.
+It contains a JSON body with the following fields:</p>
+
+<ul>
+<li><code>status</code>: An error code, dependant of the service, with further explanation of the error.</li>
+<li><code>localized_message</code>: A message localized in the locale of the user describing the error.</li>
+</ul>
+
+<p><code>localized_message</code> was added to allow clients to give users more feedback when they
+can&#39;t handle the <code>status</code> field. This field is current deprecated or always return in English.
+The reason is that keeping localization in backend makes it more complicated, forces us
+to make deploys just for localization. Every time a language is added we have to re-deploy
+all services.</p>
+<pre class="highlight plaintext"><code>{
+    "status": "DUPLICATED_EMAIL",
+    "localized_message": "This email is already in use. Please choose a different one."
+}
+</code></pre>
+<p>Anemone API uses the standard HTTP error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- Your token does not have permission to do that operation.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified resource could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a resiurce with an invalid method.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance or deployment. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
